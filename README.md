@@ -234,9 +234,17 @@ Developing JForge provided practical experience in:
 **Project Type:** Portfolio-Driven Development
 
 **Domain:** Full-Stack Web Development
-
-**Developed as part of:** Bachelor of Engineering in Computer Science and Engineering
-
 ---
+
+## Sample Output
+<img width="944" height="457" alt="image" src="https://github.com/user-attachments/assets/ea40e9a4-fa11-4466-9c8b-5cf0106f84e9" />
+<img width="944" height="437" alt="image" src="https://github.com/user-attachments/assets/e0638ac2-bc1e-43b4-a1ae-b414ed739e5b" />
+<img width="944" height="473" alt="image" src="https://github.com/user-attachments/assets/de1b2cdc-1701-4a37-910e-a704d2bd443a" />
+<img width="934" height="494" alt="image" src="https://github.com/user-attachments/assets/8bacab02-7cfa-4c0b-9305-13750cd7ce1b" />
+<img width="944" height="353" alt="image" src="https://github.com/user-attachments/assets/72ec0062-eba6-4761-96f5-cac325e89929" />
+
+
+
+
 
 **Made with creativity, curiosity, and a little bit of honey. 🍯🤎**
