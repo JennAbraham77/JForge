@@ -227,13 +227,6 @@ Developing JForge provided practical experience in:
 - Code generation and website export
 - Git and GitHub version control
 
-## 👩‍💻 Project Information
-
-**Project Name:** JForge — Full-Stack Drag-and-Drop Website Builder
-
-**Project Type:** Portfolio-Driven Development
-
-**Domain:** Full-Stack Web Development
 ---
 
 ## Sample Output
@@ -244,7 +237,12 @@ Developing JForge provided practical experience in:
 <img width="944" height="353" alt="image" src="https://github.com/user-attachments/assets/72ec0062-eba6-4761-96f5-cac325e89929" />
 
 
+## 👩‍💻 Project Information
 
+**Project Name:** JForge — Full-Stack Drag-and-Drop Website Builder
 
+**Project Type:** Portfolio-Driven Development
 
-**Made with creativity, curiosity, and a little bit of honey. 🍯🤎**
+**Domain:** Full-Stack Web Development
+
+**Made by:** Jennifer B Abraham
