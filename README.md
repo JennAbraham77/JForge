@@ -1,37 +1,242 @@
-# JForge — Phase 3
+# 🍯 JForge — Full-Stack Drag-and-Drop Website Builder
 
-Full-stack no-code website builder. Builds on Phase 2: React + Express + MongoDB, registration/login, user-owned projects, visual editor, and HTML export.
+**Design it. Customize it. Make it yours.**
 
-## What's new
-- Drag to reorder existing canvas elements (use the grip handle at the left of each element)
-- Portfolio, business and blog templates
-- Undo/redo editing history (up to 60 snapshots)
-- Desktop, tablet, mobile previews
-- Font-size and corner-radius customization
-- Improved generated HTML styles
+JForge is a full-stack website builder that allows users to create, customize, preview, and export websites through an interactive drag-and-drop editor, without requiring extensive coding knowledge.
 
-## Setup
-1. Keep Phase 2 as a backup. Extract this ZIP to a new folder.
-2. Make sure local MongoDB is running.
-3. Copy `server/.env.example` to `server/.env` and configure `JWT_SECRET` with a random secret of at least 32 characters.
-4. From the project root run `npm run install:all` then `npm run dev`.
-5. Open http://localhost:5173. Sign in with your existing Phase 2 account (same local MongoDB).
-6. Create or open a project, use the editor, and click Save.
+Built using **React, Node.js, Express.js, and MongoDB**, JForge provides a user-friendly environment for designing websites with real-time customization and project management features.
 
-## Notes
-- Templates replace the current unsaved canvas after confirmation. Save before applying one.
-- Undo/redo history is per editing session and is reset when a project is reopened.
-- Template images load from Unsplash and require internet.
-- This is a learning project, not a hardened public website hosting service.
-- The existing Phase 2 backend and MongoDB schema are unchanged.
+## ✨ Features
 
-## Phase 4 additions
-- Local image upload (embedded in saved project; 800 KB per image)
-- Navigation, feature card, footer, and contact-form components
-- Full preview, HTML export, ZIP export with separate HTML/CSS files
-- Project name and description settings
-- Publish a read-only preview at `http://localhost:5000/site/<slug>`
+### User Authentication
+- User registration and login
+- JWT-based authentication
+- Secure password hashing
+- Personalized dashboard
 
-**Important:** Published links are only reachable while your local backend is running and are not internet-hosted. Deploy the backend and database to share publicly. Published previews are public to anyone who knows the link. The contact form is a visual demo and does not send messages. For production, add rate limits, stricter validation, file storage, and secure hosting.
+### Interactive Website Builder
+- Drag-and-drop component reordering
+- Add, edit, and remove website components
+- Real-time website preview
+- Undo and redo functionality
+- Responsive desktop, tablet, and mobile previews
 
-Existing MongoDB accounts and projects are retained. Copy your prior `server/.env` to this version and keep it private.
+### Design Customization
+- Customize font families and font sizes
+- Change text and background colors
+- Adjust text alignment and corner radius
+- Upload images or provide image URLs
+- Customize the overall website background
+
+### Website Components
+- Headings and paragraphs
+- Buttons and images
+- Sections and navigation bars
+- Feature cards and footers
+- Contact form layouts
+
+### Templates
+JForge provides starter templates to help users quickly begin designing their websites:
+
+- Portfolio
+- Business
+- Blog
+
+### Project Management
+- Create and save multiple website projects
+- Store project data in MongoDB
+- Edit and reopen existing projects
+- Rename and delete projects
+
+### Website Export and Publishing
+- Export generated HTML
+- Download website files as a ZIP containing HTML and CSS
+- Preview completed websites
+- Generate locally accessible published website links
+
+*Note: Public internet hosting requires deployment. Contact forms are currently demonstration components.*
+
+## 🛠️ Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Frontend | React.js, Vite, JavaScript, HTML, CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB, Mongoose |
+| Authentication | JSON Web Tokens (JWT), bcryptjs |
+| UI Icons | Lucide React |
+| Export | JSZip |
+| Development Tools | VS Code, Git, GitHub, MongoDB Compass |
+
+## 🏗️ System Architecture
+
+```text
+                USER
+                  |
+                  v
+        React Frontend (Vite)
+                  |
+          HTTP / REST API
+                  |
+                  v
+        Node.js + Express.js
+                  |
+            Mongoose ODM
+                  |
+                  v
+              MongoDB
+         /              \
+       Users           Projects
+```
+
+The React frontend provides the visual website editor, while the Express backend handles authentication and project operations. MongoDB stores user accounts and saved website designs.
+
+## 📁 Project Structure
+
+```text
+webforge-starter/
+|
+|-- client/
+|   |-- src/
+|   |   |-- App.jsx
+|   |   |-- style.css
+|   |-- package.json
+|
+|-- server/
+|   |-- index.js
+|   |-- .env.example
+|   |-- package.json
+|
+|-- package.json
+|-- README.md
+```
+
+## 🚀 Installation and Setup
+
+### Prerequisites
+
+Ensure that the following are installed:
+
+- Node.js and npm
+- MongoDB Community Server
+- Git
+- VS Code or another code editor
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/JForge.git
+cd JForge
+```
+
+Replace `YOUR_USERNAME` with your GitHub username.
+
+### 2. Install Dependencies
+
+```bash
+npm run install:all
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file inside the `server` folder.
+
+```env
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/webforge
+JWT_SECRET=replace_with_a_long_random_secret_of_at_least_32_characters
+```
+
+Never commit your actual `.env` file or secret keys to GitHub.
+
+### 4. Start MongoDB
+
+Make sure your local MongoDB server is running.
+
+You can use MongoDB Compass to inspect the database and verify saved projects.
+
+### 5. Run the Application
+
+From the project root:
+
+```bash
+npm run dev
+```
+
+### 6. Open JForge
+
+Frontend:
+
+http://localhost:5173
+
+Backend:
+
+http://localhost:5000
+
+## 📸 Application Screenshots
+
+Screenshots of the following pages can be added here:
+
+- Login and Registration Page
+- User Dashboard
+- Website Editor
+- Component Customization
+- Responsive Preview
+- Completed Website
+
+## ⚙️ How JForge Works
+
+1. **Authentication:** Users register or log in to access their personal workspace.
+2. **Project Creation:** Users create a new website project or open an existing one.
+3. **Website Design:** Components are added to the canvas and reordered using drag-and-drop.
+4. **Customization:** Text, fonts, colors, backgrounds, and layouts are modified using the Properties panel.
+5. **Live Preview:** Users inspect their designs in different screen sizes.
+6. **Project Storage:** Website designs are saved to MongoDB through the Express REST API.
+7. **Export:** Completed designs can be exported as HTML or a ZIP containing HTML and CSS.
+
+## 🎯 Project Objectives
+
+- Develop a user-friendly visual website builder.
+- Reduce the complexity of basic website development.
+- Provide real-time component customization.
+- Implement secure user authentication.
+- Enable persistent storage and management of website projects.
+- Generate reusable website code from visual designs.
+- Support responsive website previews.
+
+## 🔮 Future Enhancements
+
+- Cloud deployment and publicly shareable website URLs
+- Additional professionally designed templates
+- Advanced drag-and-drop positioning
+- Multi-page website support
+- Functional contact forms
+- Custom domain integration
+- Collaborative website editing
+
+## 📚 Learning Outcomes
+
+Developing JForge provided practical experience in:
+
+- Full-stack web application development
+- React component architecture and state management
+- REST API development using Express.js
+- MongoDB database integration
+- JWT authentication and password security
+- Dynamic user-interface customization
+- Code generation and website export
+- Git and GitHub version control
+
+## 👩‍💻 Project Information
+
+**Project Name:** JForge — Full-Stack Drag-and-Drop Website Builder
+
+**Project Type:** Portfolio-Driven Development
+
+**Domain:** Full-Stack Web Development
+
+**Developed as part of:** Bachelor of Engineering in Computer Science and Engineering
+
+---
+
+**Made with creativity, curiosity, and a little bit of honey. 🍯🤎**
